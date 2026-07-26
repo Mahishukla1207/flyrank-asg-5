@@ -146,6 +146,32 @@ body {
   font-size: 1rem;
 }
 
+.controls-bar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(15, 23, 42, 0.3);
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border-color);
+}
+
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.9rem;
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.toggle-checkbox {
+  width: 1.1rem;
+  height: 1.1rem;
+  accent-color: var(--accent-blue);
+  cursor: pointer;
+}
+
 .demo-card {
   display: flex;
   flex-direction: column;
@@ -262,7 +288,7 @@ body {
   color: var(--text-muted);
 }
 
-.a11y-checklist code, .a11y-checklist kbd, .section-description kbd, .feature-list kbd {
+.a11y-checklist code, .a11y-checklist kbd, .section-description kbd, .feature-list kbd, .disclosure-panel code, .disclosure-panel kbd {
   background: var(--bg-card);
   padding: 0.15rem 0.4rem;
   border-radius: 0.25rem;
@@ -475,6 +501,83 @@ body {
   gap: 0.5rem;
   color: var(--text-muted);
   font-size: 0.925rem;
+}
+
+/* Disclosure / Accordion Styles */
+.accordion-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.disclosure-item {
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.4);
+}
+
+.disclosure-heading {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.disclosure-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--text-main);
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.disclosure-trigger:hover {
+  background: var(--bg-card-hover);
+}
+
+.disclosure-trigger.expanded {
+  color: var(--accent-blue);
+  background: rgba(56, 189, 248, 0.08);
+}
+
+.disclosure-trigger:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: -2px;
+}
+
+.disclosure-chevron {
+  transition: transform 0.2s ease;
+  color: var(--text-muted);
+
+}
+
+.disclosure-chevron.rotated {
+  transform: rotate(180deg);
+  color: var(--accent-blue);
+}
+
+.disclosure-panel {
+  border-top: 1px solid var(--border-color);
+  padding: 1.25rem;
+  background: var(--bg-primary);
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.disclosure-panel[hidden] {
+  display: none;
+}
+
+.disclosure-panel-inner {
+  line-height: 1.6;
 }
 
 @keyframes fadeIn {
