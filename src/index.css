@@ -157,6 +157,11 @@ body {
   align-items: flex-start;
 }
 
+.demo-card.full-width {
+  align-items: stretch;
+  width: 100%;
+}
+
 .placeholder-card {
   display: flex;
   flex-direction: column;
@@ -257,7 +262,7 @@ body {
   color: var(--text-muted);
 }
 
-.a11y-checklist code, .a11y-checklist kbd {
+.a11y-checklist code, .a11y-checklist kbd, .section-description kbd, .feature-list kbd {
   background: var(--bg-card);
   padding: 0.15rem 0.4rem;
   border-radius: 0.25rem;
@@ -376,6 +381,100 @@ body {
   justify-content: flex-end;
   gap: 0.75rem;
   margin-top: 0.5rem;
+}
+
+/* Tabs Styles */
+.tabs-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.tab-list {
+  display: flex;
+  gap: 0.5rem;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 0.25rem;
+}
+
+.tab-item {
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  padding: 0.65rem 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 0.375rem 0.375rem 0 0;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.tab-item:hover:not(:disabled) {
+  color: var(--text-main);
+  background: var(--bg-card-hover);
+}
+
+.tab-item.active {
+  color: var(--accent-blue);
+  font-weight: 600;
+  background: rgba(56, 189, 248, 0.1);
+}
+
+.tab-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: -0.35rem;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--accent-blue);
+  border-radius: 2px;
+}
+
+.tab-item:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.tab-item:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.tab-panel {
+  padding: 1.5rem;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 0.5rem;
+  min-height: 180px;
+  outline: none;
+}
+
+.tab-panel:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+}
+
+.panel-content h3 {
+  color: var(--text-main);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.panel-content p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.925rem;
 }
 
 @keyframes fadeIn {
